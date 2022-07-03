@@ -12,7 +12,7 @@ So what I need is a simple UI to click and a .yaml file to define.
 ## Instructions / Q&As
 ### How to install?
 Any one is OK
-1. Download directly in [script-manager](https://github.com/huangjihui511/script-manager/raw/master/bin/script-manager_1.0.0).
+1. Download directly in [script-manager](https://github.com/huangjihui511/script-manager/raw/master/bin/script-manager_1_0_1).
 2. Download a verion in [binary files](https://github.com/huangjihui511/script-manager/raw/master/bin/).
 3. Execute in the terminal.
 ```
