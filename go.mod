@@ -1,4 +1,4 @@
-module jihui/script-manager
+module huangjihui511/script-manager
 
 go 1.18
 

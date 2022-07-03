@@ -2,7 +2,7 @@ package pkg
 
 import (
 	"fmt"
-	"jihui/script-manager/model"
+	"huangjihui511/script-manager/model"
 
 	"github.com/andlabs/ui"
 	"github.com/atotto/clipboard"
