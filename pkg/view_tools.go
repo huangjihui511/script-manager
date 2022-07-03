@@ -1,7 +1,6 @@
 package pkg
 
 import (
-	"fmt"
 	"jihui/script-manager/model"
 
 	"github.com/andlabs/ui"
@@ -36,29 +35,7 @@ func CreateTools(box *ui.Box, getData func() (model.View, error)) *ui.Box {
 	helpButton := ui.NewButton("Help")
 	toolsbox.Append(helpButton, false)
 	helpButton.OnClicked(func(b *ui.Button) {
-		helpWindow := CreateHelpWindow()
-		helpWindow.Show()
+		Open("https://github.com/huangjihui511/script-manager")
 	})
 	return toolsbox
-}
-
-func CreateHelpWindow() *ui.Window {
-	helpWindow := ui.NewWindow("help", 100, 50, false)
-	helpWindow.SetMargined(true)
-	box := ui.NewVerticalBox()
-	box.SetPadded(true)
-	qaBox := ui.NewVerticalBox()
-	qaBox.SetPadded(true)
-	qaBox.Append(ui.NewLabel("Questions & Answers"), false)
-	for _, qa := range model.QAs {
-		qaBox.Append(ui.NewLabel(fmt.Sprintf("Q: %s", qa.Question)), false)
-		qaBox.Append(ui.NewLabel(fmt.Sprintf("A: %s", qa.Answer)), false)
-	}
-	box.Append(qaBox, false)
-	helpWindow.SetChild(box)
-	helpWindow.OnClosing(func(*ui.Window) bool {
-		helpWindow.Hide()
-		return true
-	})
-	return helpWindow
 }
