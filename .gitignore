@@ -1,3 +1,4 @@
 .vscode
 *.yaml
 *_bin
+.DS_Store

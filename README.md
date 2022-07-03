@@ -15,7 +15,7 @@ Any one is OK
 1. Download directly in [script-manager](https://github.com/huangjihui511/script-manager/raw/master/bin/script-manager_1.0.0).
 2. Download a verion in [binary files](https://github.com/huangjihui511/script-manager/raw/master/bin/).
 3. Execute `go install  github.com/huangjihui511/script-manager@latest` in the terminal.
-### How to Initialize?
+### How to initialize?
 1. Create environment variable named SM_CONF_PATH.
 2. Let it be the script definition yaml file path on your machine.
 3. Open the application by double clicking the binary file or using shell command as you like.
