@@ -19,7 +19,7 @@ func InitConfigPath() {
 		model.ConfigPath = configPath
 		return
 	}
-	CreateErrorUI(fmt.Errorf("Not find the definition yaml file, please see QAs in help"))
+	CreateErrorUI(fmt.Errorf("Not find the definition yaml file path in environment variable, please see information in help"))
 }
 
 func ReadConfig(path string) (model.Config, error) {

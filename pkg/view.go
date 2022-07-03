@@ -15,9 +15,10 @@ func CreateUI(getData func() (model.View, error)) bool {
 		return false
 	}
 	err = ui.Main(func() {
-		window := ui.NewWindow(fmt.Sprintf("script-management: %s", viewData.ViewName), 200, 200, false)
+		window := ui.NewWindow(fmt.Sprintf("script-management: %s", viewData.ViewName), 30, 100, false)
 		window.SetMargined(true)
 		box := ui.NewVerticalBox()
+		box.SetPadded(true)
 		toolsBox := CreateTools(box, getData)
 		contentBox := CreateWindowContent(viewData)
 		box.Append(toolsBox, false)
@@ -40,45 +41,64 @@ func CreateWindowContent(viewData model.View) *ui.Box {
 	box := ui.NewVerticalBox()
 	box.SetPadded(true)
 	for _, group := range viewData.CommandGroups {
-		box.Append(ui.NewLabel(fmt.Sprintf("group-name: %s", group.GroupName)), false)
+		groupBox := ui.NewHorizontalBox()
+		groupBox.SetPadded(true)
+		hideBottom := ui.NewButton("Expand")
+		groupBox.Append(hideBottom, false)
+		groupBox.Append(ui.NewLabel(fmt.Sprintf("group-name: %s", group.GroupName)), false)
+		box.Append(groupBox, false)
+		commandsBox := ui.NewVerticalBox()
+		commandsBox.SetPadded(true)
 		for _, command := range group.Commands {
-			hbox := CreateCommand(command)
-			box.Append(hbox, false)
+			commandBox := CreateCommand(command)
+			commandsBox.Append(commandBox, false)
 		}
+		box.Append(commandsBox, false)
+		commandsBox.Hide()
+		hideBottom.OnClicked(func(b *ui.Button) {
+			if commandsBox.Visible() {
+				commandsBox.Hide()
+				hideBottom.SetText("Expand")
+			} else {
+				commandsBox.Show()
+				hideBottom.SetText("Hide")
+			}
+		})
 	}
 	return box
 }
 
 func CreateCommand(command model.Command) *ui.Box {
-	hbox := ui.NewHorizontalBox()
-	hbox.SetPadded(true)
+	commandBox := ui.NewVerticalBox()
+	scriptBox := ui.NewHorizontalBox()
+	scriptBox.SetPadded(true)
 	copyBotton := ui.NewButton("Copy")
 	detailBotton := ui.NewButton("Detail")
-	hbox.Append(copyBotton, false)
-	hbox.Append(detailBotton, false)
-	hbox.Append(ui.NewLabel(fmt.Sprintf("%s", shortenSentence(command.Script, 50))), false)
+	scriptBox.Append(ui.NewLabel(" "), false)
+	scriptBox.Append(copyBotton, false)
+	scriptBox.Append(detailBotton, false)
+	scriptBox.Append(ui.NewLabel(fmt.Sprintf("%s", shortenSentence(command.Script, 50))), false)
 	cmd := command.Script
 	copyBotton.OnClicked(func(b *ui.Button) {
 		clipboard.WriteAll(cmd)
 	})
+	commandBox.Append(scriptBox, false)
+	detailForm := ui.NewForm()
+	detailForm.SetPadded(true)
+	detailForm.Append("   Script:", ui.NewLabel(fmt.Sprintf("%s", command.Script)), false)
+	if len(command.Info) != 0 {
+		detailForm.Append("   Info:", ui.NewLabel(fmt.Sprintf(" %s", command.Info)), false)
+	}
+	commandBox.Append(detailForm, false)
+	detailForm.Hide()
 	detailBotton.OnClicked(func(b *ui.Button) {
-		detailsWindow := ui.NewWindow("detail", 100, 50, false)
-		box := ui.NewVerticalBox()
-		box.Append(ui.NewLabel(fmt.Sprintf("Script: %s", command.Script)), false)
-		if len(command.Info) == 0 {
-			box.Append(ui.NewLabel(fmt.Sprintf("Info: no info")), false)
+		if detailForm.Visible() {
+			detailForm.Hide()
 		} else {
-			box.Append(ui.NewLabel(fmt.Sprintf("Info: %s", command.Info)), false)
+			detailForm.Show()
 		}
-		detailsWindow.SetMargined(true)
-		detailsWindow.SetChild(box)
-		detailsWindow.OnClosing(func(*ui.Window) bool {
-			detailsWindow.Hide()
-			return true
-		})
-		detailsWindow.Show()
 	})
-	return hbox
+	return commandBox
 }
 
 func CreateErrorUI(err error) {
