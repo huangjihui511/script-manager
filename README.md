@@ -1,17 +1,14 @@
-<style>
-img{
-    width: 60%;
-    padding-left: 20%;
-}
-</style>
 # README
 ## What is it?
 As a developer I usually have so many commands to use every day, it is essential for me to manage them clearly and copy them quickly.
+
 So what I need is a simple UI to click and a .yaml file to define.
 ### UI
-![UI](./img/ui.png)
+<img src="./img/ui.png" width = "70%" />
+
 ### Yaml
-![yaml](./img/yaml.png "Yaml")
+<img src="./img/yaml.png" width = "70%" />
+
 ## Repository
 https://github.com/huangjihui511/script-manager
 ## Instructions / Q&As
