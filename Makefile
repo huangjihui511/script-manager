@@ -1,4 +1,4 @@
-release_version=_1_0_0
+release_version=_1_0_1
 target_path=./bin/script-manager${release_version}
 source_path=./script-manager
 
