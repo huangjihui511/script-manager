@@ -7,11 +7,11 @@ var (
 	InternalCommand = []Command{
 		{
 			Script: fmt.Sprintf("vim \"%s\"", ConfigPath),
-			Info:   "edit config",
+			Info:   "edit config with vim",
 		},
 		{
 			Script: fmt.Sprintf("open \"%s\"", ConfigPath),
-			Info:   "edit config",
+			Info:   "edit config with your editor",
 		},
 	}
 )

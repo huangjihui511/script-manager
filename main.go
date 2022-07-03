@@ -1,8 +1,8 @@
 package main
 
 import (
-	"jihui/script-manager/model"
-	"jihui/script-manager/pkg"
+	"huangjihui511/script-manager/model"
+	"huangjihui511/script-manager/pkg"
 )
 
 func init() {

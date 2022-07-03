@@ -2,8 +2,8 @@ package pkg
 
 import (
 	"fmt"
+	"huangjihui511/script-manager/model"
 	"io/ioutil"
-	"jihui/script-manager/model"
 	"os"
 
 	"gopkg.in/yaml.v3"
