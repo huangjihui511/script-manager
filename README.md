@@ -16,9 +16,9 @@ Any one is OK
 2. Download a verion in [binary files](https://github.com/huangjihui511/script-manager/raw/master/bin/).
 3. Execute `go install  github.com/huangjihui511/script-manager@latest` in the terminal.
 ### How to Initialize?
-1. Open the application by double clicking the binary file.
-2. Create environment variable named SM_CONF_PATH.
-3. Let it be the script definition yaml file path on your machine.
+1. Create environment variable named SM_CONF_PATH.
+2. Let it be the script definition yaml file path on your machine.
+3. Open the application by double clicking the binary file.
 4. Click the "Demo" botton which will copy the demo yaml file content to your clipboard.
 5. Edit your script definition yaml file refering to the demo.
 ### How to deploy edits?
