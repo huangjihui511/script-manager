@@ -9,8 +9,6 @@ So what I need is a simple UI to click and a .yaml file to define.
 ### Yaml
 <img src="./img/yaml.png" width = "70%" />
 
-## Repository
-https://github.com/huangjihui511/script-manager
 ## Instructions / Q&As
 ### How to install?
 1. Download at [script-manager](https://github.com/huangjihui511/script-manager/raw/master/bin/script-manager)
@@ -21,6 +19,9 @@ https://github.com/huangjihui511/script-manager
 4. Click the "Demo" botton which will copy the demo yaml file content to your clipboard.
 5. Edit your script definition yaml file refering to the demo.
 ### How to deploy edits?
-1. Click the botton named "Update"
+1. Edit and save the yaml file.
+2. Click the botton named "Update".
+## Repository
+https://github.com/huangjihui511/script-manager
 ## Feedback
 You are welcome to send emails to `huangjihui511@hotmail.com`
