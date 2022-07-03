@@ -1,11 +1,18 @@
 # README
+## What is it?
+As a developer I usually have so many commands to use every day, it is essential for me to manage them clearly and copy them quickly.
+So what I need is a simple UI to click and a .yaml file to define.
+### UI
+![UI](./img/ui.png "UI")
+### Yaml
+![UI](./img/yaml.png "Yaml")
 ## Repository
 https://github.com/huangjihui511/script-manager
-## Install
-Download at [script-manager](https://github.com/huangjihui511/script-manager/raw/master/bin/script-manager)
 ## Instructions / Q&As
+### How to install?
+1. Download at [script-manager](https://github.com/huangjihui511/script-manager/raw/master/bin/script-manager)
 ### How to Initialize?
-1. Open the application.
+1. Open the application by double clicking the binary file.
 2. Create environment variable named SM_CONF_PATH.
 3. Let it be the script definition yaml file path on your machine.
 4. Click the "Demo" botton which will copy the demo yaml file content to your clipboard.
