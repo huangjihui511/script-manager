@@ -4,10 +4,10 @@ As a developer I usually have so many commands to use every day, it is essential
 
 So what I need is a simple UI to click and a .yaml file to define.
 ### UI
-<img src="./img/ui.png" width = "70%" />
+<img src="https://s2.loli.net/2022/07/03/TbeLnVlu5MJNUxk.png" width = "70%" />
 
 ### Yaml
-<img src="./img/yaml.png" width = "70%" />
+<img src="https://s2.loli.net/2022/07/03/r4kGu9LJpaMoeRm.png" width = "70%" />
 
 ## Instructions / Q&As
 ### How to install?
